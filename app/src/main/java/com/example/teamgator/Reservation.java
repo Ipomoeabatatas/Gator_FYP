@@ -223,6 +223,7 @@ public class Reservation extends RobotActivity implements RobotLifecycleCallback
         String remarks = ((EditText) findViewById(R.id.remarksField)).getText().toString().trim();
         String time = ((EditText) findViewById(R.id.timeField)).getText().toString();
         String date = ((EditText) findViewById(R.id.dateField)).getText().toString();
+        String remark = ((EditText) findViewById(R.id.remarksField)).getText().toString();
 
 
         // Validate name
@@ -268,6 +269,14 @@ public class Reservation extends RobotActivity implements RobotLifecycleCallback
         if (time.isEmpty()) {
             ((EditText) findViewById(R.id.timeField)).setError("Time is required");
             speak("Oh no, please enter the time");
+            ((EditText) findViewById(R.id.timeField)).requestFocus();
+            return;
+        }
+
+        // Validate time
+        if (remark.isEmpty()) {
+            ((EditText) findViewById(R.id.remarksField)).setError("Please enter the No.of guests");
+            speak("Oh no, please enter the number of guests");
             ((EditText) findViewById(R.id.timeField)).requestFocus();
             return;
         }
