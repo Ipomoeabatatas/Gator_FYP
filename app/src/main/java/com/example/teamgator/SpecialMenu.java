@@ -1,7 +1,5 @@
 package com.example.teamgator;
 
-//import com.aldebaran.qi.sdk;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -75,77 +73,83 @@ public class SpecialMenu extends RobotActivity implements RobotLifecycleCallback
         // Execute the Say action
         say.run();
         // The robot focus is gained.
-        PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
-                .withTexts("exit", "homepage", "what is on the menu")
-                .build();
+        boolean listening = true;
+        while (listening) {
+            PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
+                    .withTexts("exit", "homepage", "what is on the menu")
+                    .build();
 
-        Listen listen = ListenBuilder.with(qiContext)
-                .withPhraseSet(phraseSet)
-                .build();
+            Listen listen = ListenBuilder.with(qiContext)
+                    .withPhraseSet(phraseSet)
+                    .build();
 
-        ListenResult listenResult = listen.run();
-        String recognizedPhrase = listenResult.getHeardPhrase().getText();
+            ListenResult listenResult = listen.run();
+            String recognizedPhrase = listenResult.getHeardPhrase().getText();
+            if (recognizedPhrase.toLowerCase().equals("exit")) {
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Sure! My friend!")
+                            .build();
+                    say1.run();
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("No Problem!")
+                            .build();
+                    say1.run();
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Alright, let me handle it!")
+                            .build();
+                    say1.run();
+                }
+                Intent intent = new Intent(SpecialMenu.this, MenuMain.class);
+                startActivity(intent);
 
-        if (recognizedPhrase.toLowerCase().equals("exit")) {
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Sure! My friend!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("No Problem!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Alright, let me handle it!")
-                        .build();
-                say1.run();
-            }
-            Intent intent = new Intent(SpecialMenu.this, MenuMain.class);
-            startActivity(intent);
-
-        } else if (recognizedPhrase.toLowerCase().equals("homepage")) {
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Sure! My friend!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("No Problem!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Alright, let me handle it!")
-                        .build();
-                say1.run();
-            }
-            Intent intent = new Intent(SpecialMenu.this, MainActivity.class);
-            startActivity(intent);
-        } else if (recognizedPhrase.toLowerCase().equals("what is on the menu")) {
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Welcome to our vegetarian paradise! Our menu is a delight for herbivores, featuring flavorful plant-based dishes that satisfy every craving!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Explore the art of vegetarian cuisine with our diverse menu! From hearty lentil soups to gourmet vegetable stir-fries, we've got it all!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Our vegetarian menu brings you the best of nature's bounty! Savor the taste of fresh, locally sourced ingredients in every bite!")
-                        .build();
-                say1.run();
+            } else if (recognizedPhrase.toLowerCase().equals("homepage")) {
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Sure! My friend!")
+                            .build();
+                    say1.run();
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("No Problem!")
+                            .build();
+                    say1.run();
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Alright, let me handle it!")
+                            .build();
+                    say1.run();
+                }
+                Intent intent = new Intent(SpecialMenu.this, MainActivity.class);
+                startActivity(intent);
+            } else if (recognizedPhrase.toLowerCase().equals("what is on the menu")) {
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Welcome to our vegetarian paradise! Our menu is a delight for herbivores, featuring flavorful plant-based dishes that satisfy every craving!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Explore the art of vegetarian cuisine with our diverse menu! From hearty lentil soups to gourmet vegetable stir-fries, we've got it all!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Our vegetarian menu brings you the best of nature's bounty! Savor the taste of fresh, locally sourced ingredients in every bite!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                }
             }
         }
+
     }
     @Override
     public void onRobotFocusLost() {

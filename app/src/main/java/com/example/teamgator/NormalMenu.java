@@ -1,6 +1,4 @@
 package com.example.teamgator;
-//import com.aldebaran.qi.sdk;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -76,79 +74,85 @@ public class NormalMenu extends RobotActivity implements RobotLifecycleCallbacks
 
         // Execute the Say action
         say.run();
-        // The robot focus is gained.
-        PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
-                .withTexts("exit", "homepage", "what is on the menu")
-                .build();
+        boolean listening = true;
+        while (listening) {
+            // The robot focus is gained.
+            PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
+                    .withTexts("exit", "homepage", "what is on the menu")
+                    .build();
 
-        Listen listen = ListenBuilder.with(qiContext)
-                .withPhraseSet(phraseSet)
-                .build();
+            Listen listen = ListenBuilder.with(qiContext)
+                    .withPhraseSet(phraseSet)
+                    .build();
 
-        ListenResult listenResult = listen.run();
-        String recognizedPhrase = listenResult.getHeardPhrase().getText();
+            ListenResult listenResult = listen.run();
+            String recognizedPhrase = listenResult.getHeardPhrase().getText();
 
-        if (recognizedPhrase.toLowerCase().equals("exit")) {
-            // Perform actions or make the robot say something in response to "Hello"
-            // For example, say "Hi there!"
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Sure! My friend!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("No Problem!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Alright, let me handle it!")
-                        .build();
-                say1.run();
+            if (recognizedPhrase.toLowerCase().equals("exit")) {
+                // Perform actions or make the robot say something in response to "Hello"
+                // For example, say "Hi there!"
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Sure! My friend!")
+                            .build();
+                    say1.run();
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("No Problem!")
+                            .build();
+                    say1.run();
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Alright, let me handle it!")
+                            .build();
+                    say1.run();
+                }
+                Intent intent = new Intent(NormalMenu.this, MenuMain.class);
+                startActivity(intent);
+
+            } else if (recognizedPhrase.toLowerCase().equals("homepage")) {
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Sure! My friend!")
+                            .build();
+                    say1.run();
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("No Problem!")
+                            .build();
+                    say1.run();
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Alright, let me handle it!")
+                            .build();
+                    say1.run();
+                }
+                Intent intent = new Intent(NormalMenu.this, MainActivity.class);
+                startActivity(intent);
             }
-            Intent intent = new Intent(NormalMenu.this, MenuMain.class);
-            startActivity(intent);
-
-        } else if (recognizedPhrase.toLowerCase().equals("homepage")) {
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Sure! My friend!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("No Problem!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Alright, let me handle it!")
-                        .build();
-                say1.run();
-            }
-            Intent intent = new Intent(NormalMenu.this, MainActivity.class);
-            startActivity(intent);
-        }
-        else if (recognizedPhrase.toLowerCase().equals("what is on the menu")) {
-            int randomNumber = new Random().nextInt(3);
-            if (randomNumber == 0) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Our menu includes Starters, Salads, Main Courses, Desserts, and drinks!")
-                        .build();
-                say1.run();
-            } else if (randomNumber == 1) {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Experience a burst of flavors with our gourmet fusion dishes! Our menu combines the best of Spanish cuisines!")
-                        .build();
-                say1.run();
-            } else {
-                Say say1 = SayBuilder.with(qiContext)
-                        .withText("Welcome to our menu! We have a delightful assortment of dishes, ranging from appetizers to gourmet entrees and mouthwatering desserts!")
-                        .build();
-                say1.run();
+            else if (recognizedPhrase.toLowerCase().equals("what is on the menu")) {
+                int randomNumber = new Random().nextInt(3);
+                if (randomNumber == 0) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Our menu includes Starters, Salads, Main Courses, Desserts, and drinks!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                } else if (randomNumber == 1) {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Experience a burst of flavors with our gourmet fusion dishes! Our menu combines the best of Spanish cuisines!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                } else {
+                    Say say1 = SayBuilder.with(qiContext)
+                            .withText("Welcome to our menu! We have a delightful assortment of dishes, ranging from appetizers to gourmet entrees and mouthwatering desserts!")
+                            .build();
+                    say1.run();
+                    listening = true;
+                }
             }
         }
     }
@@ -180,6 +184,5 @@ public class NormalMenu extends RobotActivity implements RobotLifecycleCallbacks
         return scriptBuilder.toString();
     }
 }
-
 
 
