@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <!-- The solid color for the glowing effect -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#80FFFFFF" /> <!-- Change the color to your desired glowing effect -->
+                </shape>
+            </item>
+            <!-- The original EditText background -->
+            <item android:id="@android:id/background">
+                <shape android:shape="rectangle">
+                    <solid android:color="#00000000" /> <!-- Transparent color -->
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Default state -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" /> <!-- Transparent color -->
+        </shape>
+    </item>
+</selector>

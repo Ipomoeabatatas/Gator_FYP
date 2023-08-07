@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "373359702129",
+    "firebase_url": "https://teamgator-39a90-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "teamgator-39a90",
+    "storage_bucket": "teamgator-39a90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373359702129:android:67ee6e7c79faf9e2da6bd0",
+        "android_client_info": {
+          "package_name": "com.example.teamgator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373359702129-bpkg87mtk2dsadv3uj69mkomf3bulkge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmuKdPAKzCK_Gh707WrAH6akcMfFI8heo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373359702129-bpkg87mtk2dsadv3uj69mkomf3bulkge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

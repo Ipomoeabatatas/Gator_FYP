@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Image background -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image_altaf" />
+
+    <!-- Translucent overlay of background -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66FFFFFF" />
+
+    <!-- Home page header -->
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:alpha="1"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="ABOUT US" />
+
+    <!-- Grid layout for the 4 images -->
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:useDefaultMargins="true"
+        android:layout_centerInParent="true">
+
+        <!-- First Pic -->
+        <ImageView
+            android:id="@+id/firstPic"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:src="@drawable/background_image"
+            android:scaleType="centerCrop" />
+
+        <!-- Second Pic -->
+        <ImageView
+            android:id="@+id/secondPic"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:src="@drawable/spain"
+            android:scaleType="centerCrop" />
+
+        <!-- Third Pic -->
+        <ImageView
+            android:id="@+id/thirdPic"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:src="@drawable/restaurant_image"
+            android:scaleType="centerCrop" />
+
+        <!-- Fourth Pic -->
+        <ImageView
+            android:id="@+id/fourthPic"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:src="@drawable/food_image"
+            android:scaleType="centerCrop" />
+
+    </GridLayout>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:onClick="goBack2" />
+
+</RelativeLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Image background -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image_altaf" />
+
+    <!-- Translucent overlay of background -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66FFFFFF" />
+
+    <!-- Header "Quiz" -->
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="1"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="QUIZ" />
+
+    <!-- Quiz ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/submitButton"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Quiz Question 1 -->
+            <TextView
+                android:id="@+id/questionTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="What's the name of our restaurant?"
+                style="@style/BoldText" />
+
+            <RadioGroup
+                android:id="@+id/answerRadioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/answer1RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THE SPANISH CUISINE"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer2RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LA CAFETERIA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer3RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LAS TAPAS"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer4RadioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EL HORNO"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+            </RadioGroup>
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Quiz Question 2 -->
+            <TextView
+                android:id="@+id/questionTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="What's the theme of our restaurant?"
+                style="@style/BoldText" />
+
+            <RadioGroup
+                android:id="@+id/answerRadioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/answer1RadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ITALIAN"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer2RadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SPANISH"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer3RadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FRENCH"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer4RadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHINESE"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+            </RadioGroup>
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Quiz Question 3 -->
+            <TextView
+                android:id="@+id/questionTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="When were we established?"
+                style="@style/BoldText" />
+
+            <RadioGroup
+                android:id="@+id/answerRadioGroup3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/answer1RadioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1973"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer2RadioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1984"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer3RadioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2004"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer4RadioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1995"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+            </RadioGroup>
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Quiz Question 4 -->
+            <TextView
+                android:id="@+id/questionTextView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="What's the national food of Spain?"
+                style="@style/BoldText" />
+
+            <RadioGroup
+                android:id="@+id/answerRadioGroup4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/answer1RadioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAPAS"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer2RadioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PAELLA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer3RadioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PIZZA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer4RadioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TACOS"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+            </RadioGroup>
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Quiz Question 5 -->
+            <TextView
+                android:id="@+id/questionTextView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="Which continent does Spain belong to?"
+                style="@style/BoldText" />
+
+            <RadioGroup
+                android:id="@+id/answerRadioGroup5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/answer1RadioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASIA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer2RadioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NORTH AMERICA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer3RadioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EUROPE"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+                <RadioButton
+                    android:id="@+id/answer4RadioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SOUTH AMERICA"
+                    android:textSize="16sp"
+                    style="@style/BoldText" />
+
+            </RadioGroup>
+
+            <!-- Add some space between questions -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"
+        android:onClick="goBack2" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:onClick="submitQuiz" />
+
+</RelativeLayout>

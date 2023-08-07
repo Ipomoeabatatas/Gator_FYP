@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <resources xmlns:tools="http://schemas.android.com/tools">
+        <!-- Define your edittext_outline_color here -->
+        <color android:name="edittext_outline_color" tools:ignore="ExtraText">#FF0000</color>
+    </resources>
+
+
+</selector>

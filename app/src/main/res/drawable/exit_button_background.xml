@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- Button's background when it's enabled -->
+        <item android:drawable="@drawable/exit_button_enabled" android:state_enabled="true" />
+        <!-- Button's background when it's disabled -->
+        <item android:drawable="@drawable/exit_button_disabled" />
+    </selector>
+

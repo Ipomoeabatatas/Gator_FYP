@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/me"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Survey">
+
+    <!-- Add the ViewPager to display the fragments -->
+
+    <!-- Add any other views you want to keep in the layout -->
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <dev.yuganshtyagi.smileyrating.SmileyRatingView
+            android:id="@+id/smiley_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:default_rating="@integer/material_motion_duration_long_1"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="950dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="248dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Question1"
+            android:layout_width="950dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="How would you rate the taste of the food?"
+            android:textAlignment="center"
+            android:textColor="#EFD13E"
+            android:textSize="45dp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="950dp"
+            android:layout_height="190dp"
+            android:layout_marginBottom="90dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_main2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="70dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:layout_marginTop="-10dp"
+                android:paddingTop="50dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                app:lottie_rawRes="@raw/animation_lkwbyzhm"
+                />
+
+            <RatingBar
+                android:id="@+id/question1Rating"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="100dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:numStars="4"
+                android:progressTint="#F1DD32"
+                android:rating="0"
+                android:scaleX="3.00"
+                android:scaleY="3.00"
+                android:stepSize="1"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_main"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginBottom="70dp"
+                android:paddingTop="50dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                app:lottie_rawRes="@raw/animation_lknwaiw8"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

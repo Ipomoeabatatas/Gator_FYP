@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Image background -->
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_image_altaf" />
+
+        <!-- Translucent overlay of background -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66FFFFFF" />
+
+        <!-- Drop-down box and Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header "FAQs" -->
+            <TextView
+                android:id="@+id/headerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:alpha="1"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:text="FAQs" />
+
+            <!-- Question 1 -->
+            <TextView
+                android:id="@+id/question1_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/dropdown_bg"
+                android:clickable="true"
+                android:onClick="toggleAnswerVisibility"
+                android:padding="12dp"
+                android:text="What is our operating hours/days?"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <!-- Answer 1 -->
+            <TextView
+                android:id="@+id/answer1_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="We are open everyday from 9am to 10pm."
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Question 2 -->
+            <TextView
+                android:id="@+id/question2_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Do you cater to vegetarians?"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:clickable="true"
+                android:onClick="toggleAnswerVisibility"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Answer 2 -->
+            <TextView
+                android:id="@+id/answer2_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Yes we do, you can find it at the special menu tab."
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Question 3 -->
+            <TextView
+                android:id="@+id/question3_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="What form of payments do you accept?"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:clickable="true"
+                android:onClick="toggleAnswerVisibility"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Answer 3 -->
+            <TextView
+                android:id="@+id/answer3_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="We accept Cash, NETS, PayWave and PayLah."
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Question 4 -->
+            <TextView
+                android:id="@+id/question4_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="What type of cuisine do we serve?"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:clickable="true"
+                android:onClick="toggleAnswerVisibility"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Answer 4 -->
+            <TextView
+                android:id="@+id/answer4_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="We serve all types of Spanish cuisines."
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Question 5 -->
+            <TextView
+                android:id="@+id/question5_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Do you accept walk-in reservations?"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:clickable="true"
+                android:onClick="toggleAnswerVisibility"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Answer 5 -->
+            <TextView
+                android:id="@+id/answer5_faqs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Yes, reservations can be made in the reservations tab."
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:background="@drawable/dropdown_bg" />
+
+            <!-- Add more question-answer pairs here -->
+
+            <!-- Back button -->
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="start"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:onClick="goBack2" />
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>
