@@ -145,7 +145,7 @@ public class Survey extends RobotActivity implements RobotLifecycleCallbacks {
     }
     private void startListening(QiContext qiContext) {
         PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
-                .withTexts("one star", "two star", "three star", "four star", "next")
+                .withTexts("one star", "two star", "three star", "four star", "next","previous")
                 .build();
 
         Listen listen = ListenBuilder.with(qiContext)
@@ -183,6 +183,14 @@ public class Survey extends RobotActivity implements RobotLifecycleCallbacks {
                     .build();
             say2.async().run().andThenConsume(ignore -> startListening(qiContext));
             question1Rating.setRating(4);
+        }  else if (recognizedPhrase.toLowerCase().contains("previous")) {
+            Say say2 = SayBuilder.with(qiContext)
+                    .withText("Lets move back to the main menu!")
+                    .build();
+            say2.async().run().andThenConsume(ignore -> {
+            });
+            Intent intent = new Intent(Survey.this, MainActivity.class);
+            startActivity(intent);
         } else if (recognizedPhrase.equalsIgnoreCase("next")) {
             // Set rating to 2 stars
             Say say2 = SayBuilder.with(qiContext)

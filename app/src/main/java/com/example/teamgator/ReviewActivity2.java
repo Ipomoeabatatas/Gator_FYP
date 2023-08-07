@@ -123,7 +123,7 @@ public class ReviewActivity2 extends RobotActivity implements RobotLifecycleCall
     }
     private void startListening(QiContext qiContext) {
         PhraseSet phraseSet = PhraseSetBuilder.with(qiContext)
-                .withTexts("one star", "two star", "three star", "four star", "submit")
+                .withTexts("one star", "two star", "three star", "four star", "submit","previous")
                 .build();
 
         Listen listen = ListenBuilder.with(qiContext)
@@ -161,6 +161,14 @@ public class ReviewActivity2 extends RobotActivity implements RobotLifecycleCall
                     .build();
             say2.async().run().andThenConsume(ignore -> startListening(qiContext));
             question3Rating.setRating(4);
+        } else if (recognizedPhrase.toLowerCase().contains("previous")) {
+                Say say2 = SayBuilder.with(qiContext)
+                        .withText("Lets move back to the second question!")
+                        .build();
+                say2.async().run().andThenConsume(ignore -> {
+                });
+                Intent intent = new Intent(ReviewActivity2.this, ReviewActivity.class);
+                startActivity(intent);
         } else if (recognizedPhrase.equalsIgnoreCase("submit")) {
             // Set rating to 2 stars
             Say say2 = SayBuilder.with(qiContext)
